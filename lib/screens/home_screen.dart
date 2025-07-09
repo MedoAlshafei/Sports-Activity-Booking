@@ -22,22 +22,31 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
+            height: 150,
             padding: EdgeInsets.only(top: 35, right: 16, left: 16, bottom: 8),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [appColors.accent4, colorScheme.primary],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
+              // gradient: LinearGradient(
+              //   colors: [appColors.accent4, colorScheme.primary],
+              //   begin: Alignment.topRight,
+              //   end: Alignment.bottomLeft,
+              // ),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(18),
+                bottomRight: Radius.circular(18),
               ),
+              color: colorScheme.primary,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  spacing: 2,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'Hello, Mohamed',
+                      textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.left,
+                      '👋 اهلا, محمد ',
                       style: GoogleFonts.eduSaBeginner(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -60,7 +69,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: colorScheme.onPrimary,
+        selectedItemColor: colorScheme.primary,
+        currentIndex: 0,
+        iconSize: 24,
+        onTap: (value) {},
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسية'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'الإعدادات',
+          ),
+        ],
+      ),
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         elevation: 24,

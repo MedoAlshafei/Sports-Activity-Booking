@@ -30,9 +30,15 @@ class LightTheme {
         color: Colors.white,
       ),
     ),
+    // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    //   backgroundColor: theme.colorScheme.primary,
+    //   selectedItemColor: theme.colorScheme.primary,
+    //   // enableFeedback: true,
+    //   // selectedIconTheme: IconThemeData(color: theme.colorScheme.primary),
+    // ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusGeometry.circular(18),
+        borderRadius: BorderRadiusGeometry.circular(30),
       ),
       backgroundColor: Color(0xFFA00000),
       foregroundColor: Colors.white,
