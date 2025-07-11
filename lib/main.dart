@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/': (context) => const MyHomePage(title: 'Booking App'),
-        '/login': (context) => const LoginScreen(),
-        '/signup': (context) => const SignupScreen(),
+        // '/login': (context) => const LoginScreen(),
+        // '/signup': (context) => const SignupScreen(),
         '/home': (context) => const MyHomePage(title: 'Booking App'),
       },
     );

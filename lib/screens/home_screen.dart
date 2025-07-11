@@ -14,58 +14,116 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final appColors = Theme.of(context).extension<AppColors>()!;
+    // final appColors = Theme.of(context).extension<AppColors>()!;
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 150,
-            padding: EdgeInsets.only(top: 35, right: 16, left: 16, bottom: 8),
-            decoration: BoxDecoration(
-              // gradient: LinearGradient(
-              //   colors: [appColors.accent4, colorScheme.primary],
-              //   begin: Alignment.topRight,
-              //   end: Alignment.bottomLeft,
-              // ),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(18),
-                bottomRight: Radius.circular(18),
-              ),
-              color: colorScheme.primary,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  spacing: 2,
-                  mainAxisAlignment: MainAxisAlignment.end,
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 165,
+                padding: EdgeInsets.only(
+                  top: 35,
+                  right: 16,
+                  left: 16,
+                  bottom: 8,
+                ),
+                decoration: BoxDecoration(
+                  // gradient: LinearGradient(
+                  //   colors: [appColors.accent4, colorScheme.primary],
+                  //   begin: Alignment.topRight,
+                  //   end: Alignment.bottomLeft,
+                  // ),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
+                  ),
+                  color: colorScheme.primary,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.left,
-                      '👋 اهلا, محمد ',
-                      style: GoogleFonts.eduSaBeginner(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: colorScheme.onSecondary,
-                      ),
-                    ),
-                    InkWell(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.person),
-                        color: Colors.white,
-                        tooltip: 'Profile',
-                        iconSize: 24,
-                      ),
+                    Row(
+                      spacing: 2,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.left,
+                          '👋 اهلا, محمد ',
+                          style: GoogleFonts.eduSaBeginner(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            color: colorScheme.onPrimary,
+                          ),
+                        ),
+                        InkWell(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.person),
+                            color: Colors.white,
+                            tooltip: 'Profile',
+                            iconSize: 24,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Positioned(
+                top: 85,
+                left: 20,
+                right: 20,
+                child: Card(
+                  color: Colors.grey[850],
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[700],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Icon(
+                            Icons.fitness_center,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'SMART GYM',
+                                style: GoogleFonts.eduSaBeginner(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                  color: colorScheme.onPrimary,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
