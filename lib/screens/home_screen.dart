@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 60,
                           height: 60,
                           decoration: BoxDecoration(
-                            color: Colors.grey[700],
+                            color: const Color.fromARGB(255, 59, 59, 59),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Icon(
@@ -106,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            textDirection: TextDirection.rtl,
                             children: [
                               Text(
                                 'SMART GYM',
@@ -113,6 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                   fontSize: 24,
                                   fontWeight: FontWeight.w600,
                                   color: colorScheme.onPrimary,
+                                ),
+                              ),
+                              Text(
+                                'التجمع الخامس',
+                                style: GoogleFonts.eduSaBeginner(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey,
                                 ),
                               ),
                             ],
