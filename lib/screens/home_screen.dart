@@ -16,6 +16,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // final appColors = Theme.of(context).extension<AppColors>()!;
     final colorScheme = Theme.of(context).colorScheme;
+    final userName =
+        'أهلا, محمد'; // Example user name, replace with actual user data
 
     return Scaffold(
       body: Column(
@@ -54,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.left,
-                          '👋 اهلا, محمد ',
+                          '👋 $userName',
                           style: GoogleFonts.eduSaBeginner(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -157,6 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 24,
         child: Icon(Icons.add),
       ),
+
+      // Uncomment the following lines to add an AppBar and body content
       // appBar: AppBar(
       //   backgroundColor: colorScheme.primary,
       //   title: Text(
