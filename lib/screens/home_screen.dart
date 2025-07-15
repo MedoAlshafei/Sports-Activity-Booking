@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // final appColors = Theme.of(context).extension<AppColors>()!;
     final colorScheme = Theme.of(context).colorScheme;
-    final userName =
+    const String userName =
         'أهلا, محمد'; // Example user name, replace with actual user data
 
     return Scaffold(
