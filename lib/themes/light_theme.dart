@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
@@ -22,6 +23,10 @@ class LightTheme {
     ),
     scaffoldBackgroundColor: const Color(0xFFF5F5F5),
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.light,
+        statusBarColor: Color(0xFFA00000),
+      ),
       backgroundColor: const Color(0xFFA00000),
       foregroundColor: Colors.white,
       titleTextStyle: GoogleFonts.eduSaBeginner(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sports_activity_booking/widgets/custom_bottom_nav_bar.dart';
@@ -38,10 +37,6 @@ class _HomeViewPageState extends State<HomeViewPage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFA00000),
         elevation: 0,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarIconBrightness: Brightness.light,
-          statusBarColor: Color(0xFFA00000),
-        ),
         leading: null,
         title: Align(
           alignment: Alignment.centerRight,
