@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class GymCardDetails extends StatelessWidget {
+  const GymCardDetails({super.key, required this.colorScheme});
+
+  final ColorScheme colorScheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.grey[850],
+      elevation: 8,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
+      child: Padding(
+        padding: EdgeInsets.all(20.r),
+        child: Row(
+          children: [
+            Container(
+              width: 50.w,
+              height: 50.h,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 59, 59, 59),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Icon(
+                Icons.fitness_center,
+                color: Colors.white,
+                size: 40.sp,
+              ),
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width / 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                textDirection: TextDirection.rtl,
+                children: [
+                  Text(
+                    'SMART GYM',
+                    style: GoogleFonts.eduSaBeginner(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w600,
+                      color: colorScheme.onPrimary,
+                    ),
+                  ),
+                  Text(
+                    'التجمع الخامس',
+                    style: GoogleFonts.eduSaBeginner(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
