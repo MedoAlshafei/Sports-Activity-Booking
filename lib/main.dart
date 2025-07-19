@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
         theme: LightTheme.theme,
         // darkTheme: DarkTheme.theme,
         themeMode: ThemeMode.system,
-        initialRoute: '/home',
+        initialRoute: '/',
         routes: {
           '/': (context) => const MyHomePage(title: 'Booking App'),
           // '/login': (context) => const LoginScreen(),
           // '/signup': (context) => const SignupScreen(),
-          '/home': (context) => const MyHomePage(title: 'Booking App'),
+          // '/home': (context) => const MyHomePage(title: 'Booking App'),
         },
       ),
     );
