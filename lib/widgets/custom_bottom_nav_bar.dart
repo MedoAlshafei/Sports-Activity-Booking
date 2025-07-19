@@ -4,6 +4,8 @@ class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key, required this.colorScheme});
 
   final ColorScheme colorScheme;
+  static const String labelHome = 'الرئيسية';
+  static const String labelSetting = 'الإعدادات';
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,11 @@ class CustomBottomNavBar extends StatelessWidget {
       iconSize: 24,
       onTap: (value) {},
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسية'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'الإعدادات'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: labelHome),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings),
+          label: labelSetting,
+        ),
       ],
     );
   }
