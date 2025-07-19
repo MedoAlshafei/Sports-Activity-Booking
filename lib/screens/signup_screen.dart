@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sports_activity_booking/widgets/custom_social_circl_button.dart';
+import 'package:sports_activity_booking/widgets/custom_circle_btn.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/custom_text_field.dart';
 
@@ -195,13 +195,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       icon: Icons.apple,
                       color: Colors.black,
                       bgColor: Colors.white,
-                      onTap: () {},
-                    ),
-                    const SizedBox(width: 16),
-                    CustomCircleButton(
-                      icon: Icons.facebook,
-                      color: Colors.blueAccent,
-                      // bgColor: Colors.white,
                       onTap: () {},
                     ),
                   ],
