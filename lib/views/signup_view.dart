@@ -3,14 +3,14 @@ import 'package:sports_activity_booking/widgets/custom_circle_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/custom_text_field.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class SignupViewPage extends StatefulWidget {
+  const SignupViewPage({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<SignupViewPage> createState() => _SignupViewPageState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignupViewPageState extends State<SignupViewPage> {
   final _formKey = GlobalKey<FormState>();
   final _fullNameController = TextEditingController();
   final _emailController = TextEditingController();
