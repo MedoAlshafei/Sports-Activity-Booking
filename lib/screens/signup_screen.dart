@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sports_activity_booking/widgets/custom_circle_btn.dart';
+import 'package:sports_activity_booking/widgets/custom_circle_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/custom_text_field.dart';
 
