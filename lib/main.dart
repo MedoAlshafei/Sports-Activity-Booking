@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sports_activity_booking/screens/home_screen.dart';
-import 'package:sports_activity_booking/screens/login_screen.dart';
-import 'package:sports_activity_booking/screens/signup_screen.dart';
+import 'package:sports_activity_booking/views/home_view.dart';
+import 'package:sports_activity_booking/views/login_view.dart';
+import 'package:sports_activity_booking/views/signup_view.dart';
 import 'themes/light_theme.dart';
 
 void main() {
@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         initialRoute: '/',
         routes: {
-          '/': (context) => const MyHomePage(title: 'Booking App'),
-          // '/login': (context) => const LoginScreen(),
-          // '/signup': (context) => const SignupScreen(),
-          // '/home': (context) => const MyHomePage(title: 'Booking App'),
+          '/': (context) => const HomeViewPage(title: 'Booking App'),
+          '/login': (context) => const LoginViewPage(),
+          '/signup': (context) => const SignupViewPage(),
+          '/home': (context) => const HomeViewPage(title: 'Booking App'),
         },
       ),
     );
