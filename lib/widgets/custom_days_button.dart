@@ -14,20 +14,23 @@ class DaysButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {},
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(horizontal: 4),
+      child: OutlinedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.r),
+          ),
         ),
-      ),
-      child: Text(
-        dayName,
-        style: GoogleFonts.eduSaBeginner(
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w600,
-          color: colorScheme.onSurface,
+        child: Text(
+          dayName,
+          style: GoogleFonts.eduSaBeginner(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w600,
+            color: colorScheme.onSurface,
+          ),
         ),
       ),
     );
