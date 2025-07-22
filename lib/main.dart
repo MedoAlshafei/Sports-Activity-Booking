@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: LightTheme.theme,
         // darkTheme: DarkTheme.theme,
         themeMode: ThemeMode.system,
-        initialRoute: '/',
+        initialRoute: '/login',
         routes: {
           '/': (context) => const HomeViewPage(title: 'Booking App'),
           '/login': (context) => const LoginViewPage(),
