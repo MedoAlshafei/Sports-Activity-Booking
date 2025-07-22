@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/custom_text_field.dart';
 
@@ -52,45 +55,52 @@ class _LoginViewPageState extends State<LoginViewPage> {
           child: Form(
             key: _formKey,
             child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: MediaQuery.of(context).padding.top,
+              ),
               children: [
                 // App Logo/Icon
-                Icon(Icons.sports_soccer, size: 80, color: colorScheme.primary),
-                const SizedBox(height: 24),
+                Icon(
+                  Icons.sports_soccer,
+                  size: 80.sp,
+                  color: colorScheme.primary,
+                ),
+                SizedBox(height: MediaQuery.of(context).padding.top / 2),
 
                 // Welcome Text
                 Text(
                   'مرحباً بك في تطبيق حجز الرياضة',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.eduSaBeginner(
-                    fontSize: 28,
+                    fontSize: 28.sp,
                     fontWeight: FontWeight.bold,
                     color: colorScheme.onSurface,
                   ),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).padding.top / 2),
 
                 Text(
                   'سجل دخولك للوصول لحسابك',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.eduSaBeginner(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     color: colorScheme.onSurface.withOpacity(0.7),
                   ),
                 ),
-                const SizedBox(height: 48),
+                SizedBox(height: MediaQuery.of(context).padding.top / 2),
 
                 // Email Field
                 EmailTextField(controller: _emailController),
-                const SizedBox(height: 16),
+                SizedBox(height: MediaQuery.of(context).padding.top / 2),
 
                 // Password Field
                 PasswordTextField(controller: _passwordController),
-                const SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).padding.top / 10),
 
                 // Forgot Password Link
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
                       // Navigate to forgot password screen
@@ -99,16 +109,16 @@ class _LoginViewPageState extends State<LoginViewPage> {
                       'نسيت كلمة المرور؟',
                       style: TextStyle(
                         color: colorScheme.primary,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: MediaQuery.of(context).padding.top / 2),
 
                 // Login Button
                 SizedBox(
-                  height: 56,
+                  height: 56.h,
                   child: ElevatedButton(
                     onPressed: _isLoading ? null : _handleLogin,
                     style: ElevatedButton.styleFrom(
@@ -120,9 +130,9 @@ class _LoginViewPageState extends State<LoginViewPage> {
                       elevation: 2,
                     ),
                     child: _isLoading
-                        ? const SizedBox(
-                            height: 20,
-                            width: 20,
+                        ? SizedBox(
+                            height: 20.h,
+                            width: 20.w,
                             child: CircularProgressIndicator(
                               strokeWidth: 2,
                               valueColor: AlwaysStoppedAnimation<Color>(
@@ -133,13 +143,13 @@ class _LoginViewPageState extends State<LoginViewPage> {
                         : Text(
                             'تسجيل الدخول',
                             style: GoogleFonts.eduSaBeginner(
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                   ),
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: MediaQuery.of(context).padding.top / 1.3),
 
                 // Divider
                 Row(
@@ -155,7 +165,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
                         'أو',
                         style: TextStyle(
                           color: colorScheme.onSurface.withOpacity(0.6),
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ),
@@ -166,7 +176,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: MediaQuery.of(context).padding.top / 1.3),
 
                 // Social Login Buttons
                 Row(
@@ -177,58 +187,60 @@ class _LoginViewPageState extends State<LoginViewPage> {
                           // Handle Google login
                         },
                         icon: const Icon(
-                          Icons.g_mobiledata_rounded,
+                          FontAwesomeIcons.google,
                           size: 24,
                           // color: Colors.red,
                         ),
                         label: Text(
                           'Google',
-                          style: GoogleFonts.eduSaBeginner(fontSize: 16),
+                          style: GoogleFonts.eduSaBeginner(fontSize: 16.sp),
                         ),
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: MediaQuery.of(context).padding.right / 2),
+
                     Expanded(
                       child: OutlinedButton.icon(
                         onPressed: () {
                           // Handle Apple login
                         },
                         icon: const Icon(
-                          Icons.apple,
+                          FontAwesomeIcons.apple,
                           size: 24,
                           color: Colors.black,
                         ),
                         label: Text(
                           'Apple',
-                          style: GoogleFonts.eduSaBeginner(fontSize: 16),
+                          style: GoogleFonts.eduSaBeginner(fontSize: 16.sp),
                         ),
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                           ),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 32),
+                SizedBox(width: MediaQuery.of(context).padding.right / 2),
 
                 // Sign Up Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  textDirection: TextDirection.rtl,
                   children: [
                     Text(
                       'ليس لديك حساب؟ ',
                       style: TextStyle(
                         color: colorScheme.onSurface.withOpacity(0.7),
-                        fontSize: 14,
+                        fontSize: 14.sp,
                       ),
                     ),
                     TextButton(
@@ -239,7 +251,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
                         'إنشاء حساب جديد',
                         style: TextStyle(
                           color: colorScheme.primary,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
