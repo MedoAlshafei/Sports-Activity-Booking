@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sports_activity_booking/widgets/custom_bottom_nav_bar.dart';
 import 'package:sports_activity_booking/widgets/custom_days_button.dart';
 import 'package:sports_activity_booking/widgets/gym_card_details.dart';
@@ -16,8 +15,7 @@ class HomeViewPage extends StatefulWidget {
 }
 
 class _HomeViewPageState extends State<HomeViewPage> {
-  static const String userName =
-      'أهلا, محمد'; // Example user name, replace with actual user data
+  static const String userName = 'أهلا, محمد';
 
   static const List<String> weekDays = [
     'Sat',
@@ -28,6 +26,22 @@ class _HomeViewPageState extends State<HomeViewPage> {
     'Thu',
     'Fri',
   ];
+
+  // Activities per day (sample data)
+  final Map<String, List<_Activity>> activitiesByDay = {
+    'Sat': [
+      _Activity(Icons.sports_gymnastics_outlined, 'كاراتيه', 'قاعة 1'),
+      _Activity(Icons.sports_tennis, 'تنس', 'ملعب 2'),
+    ],
+    'Sun': [_Activity(Icons.pool, 'سباحة', 'حمام سباحة')],
+    'Mon': [_Activity(Icons.sports_soccer, 'كرة قدم', 'ملعب 1')],
+    'Tue': [_Activity(Icons.sports_basketball, 'سلة', 'الصالة الرئيسية')],
+    'Wed': [_Activity(Icons.fitness_center, 'جيم', 'قاعة الحديد')],
+    'Thu': [_Activity(Icons.self_improvement, 'يوغا', 'قاعة اليوغا')],
+    'Fri': [_Activity(Icons.sports_volleyball, 'طائرة', 'الملعب المغطى')],
+  };
+
+  String selectedDay = 'Sat';
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +58,7 @@ class _HomeViewPageState extends State<HomeViewPage> {
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.left,
             '👋 $userName',
-            style: GoogleFonts.eduSaBeginner(
+            style: TextStyle(
               fontSize: 24.sp,
               fontWeight: FontWeight.bold,
               color: colorScheme.onPrimary,
@@ -59,11 +73,12 @@ class _HomeViewPageState extends State<HomeViewPage> {
                 Navigator.pushNamed(context, '/profile');
               },
               borderRadius: BorderRadius.circular(16),
-              child: Icon(
-                Icons.person,
-                color: Colors.white,
-                size: 24.sp,
-                // tooltip: 'Profile',
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.red.withAlpha(100),
+                ),
+                child: Icon(Icons.person, color: Colors.white, size: 34.sp),
               ),
             ),
           ),
@@ -80,23 +95,21 @@ class _HomeViewPageState extends State<HomeViewPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
-                  // spacing: 8, // Row does not have a spacing property
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: weekDays
                       .map(
-                        (day) =>
-                            DaysButton(colorScheme: colorScheme, dayName: day),
+                        (day) => DaysButton(
+                          colorScheme: colorScheme,
+                          dayName: day,
+                          isSelected: selectedDay == day,
+                          onPressed: () {
+                            setState(() {
+                              selectedDay = day;
+                            });
+                          },
+                        ),
                       )
                       .toList(),
-                  //  children: [
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Sat'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Sun'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Mon'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Tue'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Wed'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Thu'),
-                  //     DaysButton(colorScheme: colorScheme, dayName: 'Fri'),
-                  //   ],
                 ),
               ),
             ),
@@ -106,7 +119,7 @@ class _HomeViewPageState extends State<HomeViewPage> {
               child: Text(
                 'الأنشطة المتاحة',
                 textDirection: TextDirection.rtl,
-                style: GoogleFonts.eduSaBeginner(
+                style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
                   color: colorScheme.onSurface,
@@ -114,19 +127,7 @@ class _HomeViewPageState extends State<HomeViewPage> {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).padding.top / 4),
-            // Add your list of activities here
-            GymCardDetails(
-              colorScheme: colorScheme,
-              icon: Icons.fitness_center,
-              title: 'التجمع الخامس',
-              subtitle: 'التجمع الخامس',
-            ),
-            GymCardDetails(
-              colorScheme: colorScheme,
-              icon: Icons.fitness_center,
-              title: 'التجمع الخامس',
-              subtitle: 'التجمع الخامس',
-            ),
+            ActivityItems(activities: activitiesByDay[selectedDay] ?? const []),
           ],
         ),
       ),
@@ -134,10 +135,42 @@ class _HomeViewPageState extends State<HomeViewPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         elevation: 18,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
     );
   }
+}
+
+class ActivityItems extends StatelessWidget {
+  const ActivityItems({super.key, required this.activities});
+
+  final List<_Activity> activities;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: activities.length,
+      itemBuilder: (context, index) {
+        final activity = activities[index];
+        return GymCardDetails(
+          colorScheme: colorScheme,
+          icon: activity.icon,
+          title: activity.title,
+          subtitle: activity.subtitle,
+        );
+      },
+    );
+  }
+}
+
+class _Activity {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  const _Activity(this.icon, this.title, this.subtitle);
 }

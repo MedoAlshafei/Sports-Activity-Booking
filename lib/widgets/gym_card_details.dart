@@ -27,15 +27,15 @@ class GymCardDetails extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 50.w,
-              height: 50.h,
+              width: 55,
+              height: 55,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 59, 59, 59),
                 borderRadius: BorderRadius.circular(10.r),
               ),
-              child: Icon(icon, color: Colors.white, size: 40.sp),
+              child: Icon(icon, color: Colors.white, size: 40),
             ),
-            SizedBox(width: MediaQuery.of(context).size.width / 10),
+            // SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,15 +43,15 @@ class GymCardDetails extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.eduSaBeginner(
+                    style: TextStyle(
                       fontSize: 24.sp,
                       fontWeight: FontWeight.w600,
-                      color: colorScheme.onPrimary,
+                      color: Colors.white,
                     ),
                   ),
                   Text(
                     subtitle,
-                    style: GoogleFonts.eduSaBeginner(
+                    style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey,
