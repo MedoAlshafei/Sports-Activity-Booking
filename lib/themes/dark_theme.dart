@@ -5,26 +5,33 @@
 // class DarkTheme {
 //   static ThemeData get theme => ThemeData(
 //     useMaterial3: true,
-//     textTheme: GoogleFonts.eduSaBeginnerTextTheme(),
-//     primaryTextTheme: GoogleFonts.eduSaBeginnerTextTheme(),
+//     brightness: Brightness.dark,
+//     // Global Poppins typography
+//     textTheme: GoogleFonts.poppinsTextTheme(
+//       ThemeData(brightness: Brightness.dark).textTheme,
+//     ),
+//     primaryTextTheme: GoogleFonts.poppinsTextTheme(
+//       ThemeData(brightness: Brightness.dark).primaryTextTheme,
+//     ),
+//     fontFamily: GoogleFonts.poppins().fontFamily,
 //     colorScheme: const ColorScheme(
 //       brightness: Brightness.dark,
-//       primary: Color(0xFF7A0000), // Primary
+//       primary: Color(0xFF7A0000),
 //       onPrimary: Colors.white,
-//       secondary: Color(0xFF8A0000), // Secondary
+//       secondary: Color(0xFF8A0000),
 //       onSecondary: Colors.white,
-//       tertiary: Color(0xFF9A0000), // Tertiary
+//       tertiary: Color(0xFF9A0000),
 //       onTertiary: Colors.white,
-//       error: Color(0xFFA30E2C), // Error
-//       onError: Colors.white, // Primary Text
-//       surface: Color(0xFF2A2A2A), // Secondary Background
-//       onSurface: Color(0xFFCCCCCC), // Secondary Text
+//       error: Color(0xFFA30E2C),
+//       onError: Colors.white,
+//       surface: Color(0xFF2A2A2A),
+//       onSurface: Color(0xFFCCCCCC),
 //     ),
 //     scaffoldBackgroundColor: const Color(0xFF1C1C1C),
 //     appBarTheme: AppBarTheme(
 //       backgroundColor: const Color(0xFF7A0000),
 //       foregroundColor: Colors.white,
-//       titleTextStyle: GoogleFonts.eduSaBeginner(
+//       titleTextStyle: GoogleFonts.poppins(
 //         fontSize: 20,
 //         fontWeight: FontWeight.w600,
 //         color: Colors.white,

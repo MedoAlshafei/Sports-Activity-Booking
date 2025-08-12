@@ -13,7 +13,7 @@ class TopHomeViewCard extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width,
+          width: MediaQuery.sizeOf(context).width,
           padding: EdgeInsets.only(top: 35, right: 16, left: 16, bottom: 48),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -27,7 +27,12 @@ class TopHomeViewCard extends StatelessWidget {
           top: 0,
           left: 20,
           right: 20,
-          child: GymCardDetails(colorScheme: colorScheme),
+          child: GymCardDetails(
+            colorScheme: colorScheme,
+            icon: Icons.fitness_center,
+            title: 'Smart GYM',
+            subtitle: 'التجمع الخامس',
+          ),
         ),
       ],
     );

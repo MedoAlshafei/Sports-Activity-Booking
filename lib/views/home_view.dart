@@ -55,13 +55,15 @@ class _HomeViewPageState extends State<HomeViewPage> {
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: InkWell(
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.person),
+              onTap: () {
+                Navigator.pushNamed(context, '/profile');
+              },
+              borderRadius: BorderRadius.circular(16),
+              child: Icon(
+                Icons.person,
                 color: Colors.white,
-                style: IconButton.styleFrom(backgroundColor: Colors.black26),
-                tooltip: 'Profile',
-                iconSize: 24.sp,
+                size: 24.sp,
+                // tooltip: 'Profile',
               ),
             ),
           ),
@@ -113,12 +115,18 @@ class _HomeViewPageState extends State<HomeViewPage> {
             ),
             SizedBox(height: MediaQuery.of(context).padding.top / 4),
             // Add your list of activities here
-            GymCardDetails(colorScheme: colorScheme),
-            GymCardDetails(colorScheme: colorScheme),
-            GymCardDetails(colorScheme: colorScheme),
-            GymCardDetails(colorScheme: colorScheme),
-            GymCardDetails(colorScheme: colorScheme),
-            GymCardDetails(colorScheme: colorScheme),
+            GymCardDetails(
+              colorScheme: colorScheme,
+              icon: Icons.fitness_center,
+              title: 'التجمع الخامس',
+              subtitle: 'التجمع الخامس',
+            ),
+            GymCardDetails(
+              colorScheme: colorScheme,
+              icon: Icons.fitness_center,
+              title: 'التجمع الخامس',
+              subtitle: 'التجمع الخامس',
+            ),
           ],
         ),
       ),

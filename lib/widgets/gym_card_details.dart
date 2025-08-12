@@ -3,9 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GymCardDetails extends StatelessWidget {
-  const GymCardDetails({super.key, required this.colorScheme});
+  const GymCardDetails({
+    super.key,
+    required this.colorScheme,
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+  });
 
   final ColorScheme colorScheme;
+  final IconData icon;
+  final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +33,7 @@ class GymCardDetails extends StatelessWidget {
                 color: const Color.fromARGB(255, 59, 59, 59),
                 borderRadius: BorderRadius.circular(10.r),
               ),
-              child: Icon(
-                Icons.fitness_center,
-                color: Colors.white,
-                size: 40.sp,
-              ),
+              child: Icon(icon, color: Colors.white, size: 40.sp),
             ),
             SizedBox(width: MediaQuery.of(context).size.width / 10),
             Expanded(
@@ -37,7 +42,7 @@ class GymCardDetails extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 children: [
                   Text(
-                    'SMART GYM',
+                    title,
                     style: GoogleFonts.eduSaBeginner(
                       fontSize: 24.sp,
                       fontWeight: FontWeight.w600,
@@ -45,7 +50,7 @@ class GymCardDetails extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'التجمع الخامس',
+                    subtitle,
                     style: GoogleFonts.eduSaBeginner(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,

@@ -6,8 +6,10 @@ import 'app_colors.dart';
 class LightTheme {
   static ThemeData get theme => ThemeData(
     useMaterial3: true,
-    textTheme: GoogleFonts.eduSaBeginnerTextTheme(),
-    primaryTextTheme: GoogleFonts.eduSaBeginnerTextTheme(),
+    // Global Poppins typography
+    textTheme: GoogleFonts.poppinsTextTheme(),
+    primaryTextTheme: GoogleFonts.poppinsTextTheme(),
+    fontFamily: GoogleFonts.poppins().fontFamily,
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: Color(0xFFA00000), // Primary
@@ -29,7 +31,7 @@ class LightTheme {
       ),
       backgroundColor: const Color(0xFFA00000),
       foregroundColor: Colors.white,
-      titleTextStyle: GoogleFonts.eduSaBeginner(
+      titleTextStyle: GoogleFonts.poppins(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: Colors.white,
@@ -45,7 +47,7 @@ class LightTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(30),
       ),
-      backgroundColor: Color(0xFFA00000),
+      backgroundColor: const Color(0xFFA00000),
       foregroundColor: Colors.white,
       enableFeedback: true,
       iconSize: 24,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,7 +61,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
               children: [
                 // App Logo/Icon
                 Icon(
-                  Icons.sports_soccer,
+                  FontAwesomeIcons.futbol,
                   size: 80.sp,
                   color: colorScheme.primary,
                 ),
@@ -203,7 +202,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: MediaQuery.of(context).padding.right / 2),
+                    SizedBox(width: 8.w),
 
                     Expanded(
                       child: OutlinedButton.icon(
