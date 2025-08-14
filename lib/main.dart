@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sports_activity_booking/app_router.dart';
 
 import 'themes/light_theme.dart';
 // import 'themes/dark_theme.dart';
 
-import 'views/home_view.dart';
-import 'views/login_view.dart';
-import 'views/signup_view.dart';
-import 'views/user_profile.dart';
-
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(appRouter: AppRouter()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.appRouter});
+
+  final AppRouter appRouter;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +26,7 @@ class MyApp extends StatelessWidget {
         theme: LightTheme.theme,
         // darkTheme: DarkTheme.theme,
         themeMode: ThemeMode.system,
-        initialRoute: '/login',
-        routes: {
-          '/': (context) => const HomeViewPage(title: 'Booking App'),
-          '/login': (context) => const LoginViewPage(),
-          '/signup': (context) => const SignupViewPage(),
-          '/home': (context) => const HomeViewPage(title: 'Booking App'),
-          '/profile': (context) => const UserProfileView(),
-        },
+        onGenerateRoute: appRouter.generateRoute,
       ),
     );
   }
