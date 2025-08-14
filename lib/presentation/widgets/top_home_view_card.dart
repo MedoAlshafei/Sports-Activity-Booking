@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sports_activity_booking/widgets/gym_card_details.dart';
+import 'package:sports_activity_booking/presentation/widgets/gym_card_details.dart';
 
 class TopHomeViewCard extends StatelessWidget {
   const TopHomeViewCard({super.key, required this.colorScheme});
