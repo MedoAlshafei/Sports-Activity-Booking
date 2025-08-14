@@ -89,7 +89,7 @@ class _HomeViewPageState extends State<HomeViewPage> {
           scrollDirection: Axis.vertical,
           children: [
             TopHomeViewCard(colorScheme: colorScheme),
-            SizedBox(height: MediaQuery.of(context).padding.top / 0.9),
+            SizedBox(height: MediaQuery.paddingOf(context).top / 0.9),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Padding(
@@ -113,7 +113,7 @@ class _HomeViewPageState extends State<HomeViewPage> {
                 ),
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).padding.top / 4),
+            SizedBox(height: MediaQuery.paddingOf(context).top / 4),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
