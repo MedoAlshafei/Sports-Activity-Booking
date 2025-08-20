@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sports_activity_booking/presentation/widgets/custom_bottom_nav_bar.dart';
-import 'package:sports_activity_booking/presentation/widgets/custom_days_button.dart';
-import 'package:sports_activity_booking/presentation/widgets/gym_card_details.dart';
-import 'package:sports_activity_booking/presentation/widgets/top_home_view_card.dart';
+import '../widgets/custom_bottom_nav_bar.dart';
+import '../widgets/custom_days_button.dart';
+import '../widgets/gym_card_details.dart';
+import '../widgets/top_home_view_card.dart';
 
 class HomeViewPage extends StatefulWidget {
   const HomeViewPage({super.key, required this.title});
