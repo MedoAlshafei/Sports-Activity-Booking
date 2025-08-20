@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_circle_button.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/custom_circle_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class SignupViewPage extends StatefulWidget {
