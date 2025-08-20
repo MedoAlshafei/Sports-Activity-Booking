@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sports_activity_booking/app_router.dart';
 
-import 'themes/light_theme.dart';
+import 'presentation/themes/light_theme.dart';
+
 // import 'themes/dark_theme.dart';
 
 void main() {

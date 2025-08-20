@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'views/home_view.dart';
-import 'views/login_view.dart';
-import 'views/signup_view.dart';
-import 'views/user_profile.dart';
+import 'presentation/views/home_view.dart';
+import 'presentation/views/login_view.dart';
+import 'presentation/views/signup_view.dart';
+import 'presentation/views/user_profile.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
