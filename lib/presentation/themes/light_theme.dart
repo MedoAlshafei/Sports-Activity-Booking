@@ -15,9 +15,9 @@ class LightTheme {
       brightness: Brightness.light,
       primary: Color(0xFFA00000), // Primary
       onPrimary: Colors.white,
-      secondary: Color(0xFFB00000), // Secondary
+      secondary: Color(0xFF153251), // Secondary
       onSecondary: Colors.white,
-      tertiary: Color(0xFFC00000), // Tertiary
+      tertiary: Color.fromARGB(255, 33, 78, 126), // Tertiary
       onTertiary: Colors.white,
       error: Color(0xFFDc3545), // Error
       onError: Colors.white, // Primary Text

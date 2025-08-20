@@ -17,8 +17,10 @@ class GymCardDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Card(
-      color: Colors.grey[850],
+      color: colorScheme.secondary,
       elevation: 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
       child: Padding(
@@ -29,7 +31,7 @@ class GymCardDetails extends StatelessWidget {
               width: 55,
               height: 55,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 59, 59, 59),
+                color: Colors.white12,
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Icon(icon, color: Colors.white, size: 40),
@@ -53,7 +55,7 @@ class GymCardDetails extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,
-                      color: Colors.grey,
+                      color: Colors.grey[300],
                     ),
                   ),
                 ],
